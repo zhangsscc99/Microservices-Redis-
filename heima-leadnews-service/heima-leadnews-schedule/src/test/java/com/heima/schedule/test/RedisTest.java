@@ -20,6 +20,16 @@ import java.util.List;
 import java.util.Set;
 
 
+//延迟任务 没有明确开始时间。由事件触发。
+//在这个事件触发之后的一段时间内触发另一个事件。
+//任务可以立即执行 也可以延迟。
+//没有支付则取消订单。
+//接口对接出现网络问题。1分钟后重试。
+//网络问题。
+//delay queue。阻塞队列。
+//任务放在内存里。程序挂掉之后，任务放在内存，消息丢失。如何保证数据不丢失。
+//
+
 @SpringBootTest(classes = ScheduleApplication.class)
 @RunWith(SpringRunner.class)
 public class RedisTest {
