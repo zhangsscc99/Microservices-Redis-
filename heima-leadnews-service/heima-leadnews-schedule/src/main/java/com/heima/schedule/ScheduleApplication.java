@@ -29,3 +29,6 @@ public class ScheduleApplication {
         return interceptor;
     }
 }
+
+
+//mysql中 blob是一个二进制大型对象。是一个可以存储大量数据的容器。longblob最大存储4g。
