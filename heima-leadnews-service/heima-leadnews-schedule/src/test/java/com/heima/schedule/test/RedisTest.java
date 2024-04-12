@@ -51,6 +51,9 @@ public class RedisTest {
         //按照分值获取数据
         Set<String> zset_key_001 = cacheService.zRangeByScore("zset_key_001", 0, 8888);
         System.out.println(zset_key_001);
+
+        //可以按照分值获取数据。
+        //
     }
 
     @Test
