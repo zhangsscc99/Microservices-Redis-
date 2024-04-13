@@ -1462,5 +1462,9 @@ public class CacheService extends CachingConfigurerSupport {
             RedisConnectionUtils.releaseConnection(conn, factory,false);
         }
         return null;
+        //一个方法只能被一个机器的一个线程执行
+        //分布式锁解决集群下的方法抢占执行。
+        //通过redis的sexnx特性完成分布式锁的功能。
+        //等待a释放锁以后 其它客户端才能操作
     }
 }
