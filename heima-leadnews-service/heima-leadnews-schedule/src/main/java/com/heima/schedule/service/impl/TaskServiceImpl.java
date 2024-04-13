@@ -217,6 +217,14 @@ public class TaskServiceImpl implements TaskService {
         return task;
     }
 
+
+    //加个注解 开启调度任务。
+    //测试 enable Scheduling
+    //debug启动。
+    //reload一下 当前的工具。
+    //放到当前topic下面。
+    //
+
     /**
      * 未来数据定时刷新
      */
@@ -252,3 +260,7 @@ public class TaskServiceImpl implements TaskService {
 
 
 }
+//分布式锁解决集群下的方法抢占执行。
+//分布式锁。
+//sexnx(set if not exists)
+//redis client redis server redis client

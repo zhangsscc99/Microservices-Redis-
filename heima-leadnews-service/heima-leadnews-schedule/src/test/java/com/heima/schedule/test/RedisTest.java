@@ -65,7 +65,22 @@ public class RedisTest {
         System.out.println(scan);
     }
     //通过定时任务查询未来数据的keys，判断数据是否到期，同步，redis中的list。按照分值查询zset。
-    //
+    //未来数据队列如何定时刷新
+    //按照分值查询zset。 判断数据是否到期。
+    //按照ms值去查询的。做一个同步。
+    //zset数据同步到list当中。
+    //未来数据的keys 都要获取到。
+    //第一种 keys模糊匹配。拿到所有的key。效率很低。非常占用cpu。有的公司在redis的生产环境
+    //把keys禁用了。scan命令分批迭代。基于游标。
+    //创建一个public方法。refresh。每分钟执行。
+    //scheduled。cron=0 *1 ** ？ 每分钟执行一次。
+    //获取所有未来数据的集合key。
+    //cacheService.scan(ScheduleConstants.FUUTURE)
+    //未来数据的key。按照key和分值查询符合条件的数据。
+    //zrangebyscore。
+    //scan 循环一下。传入当前时间毫秒值。
+    //做同步。
+    //同步数据，redis管道技术。
 
     //耗时6151
     @Test
