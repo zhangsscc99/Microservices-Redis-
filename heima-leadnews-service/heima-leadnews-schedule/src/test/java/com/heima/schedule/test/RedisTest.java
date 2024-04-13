@@ -64,6 +64,8 @@ public class RedisTest {
         Set<String> scan = cacheService.scan("future_*");
         System.out.println(scan);
     }
+    //通过定时任务查询未来数据的keys，判断数据是否到期，同步，redis中的list。按照分值查询zset。
+    //
 
     //耗时6151
     @Test
